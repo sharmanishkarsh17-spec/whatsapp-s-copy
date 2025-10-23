@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+  <style>
+    body{font-family:Arial;display:flex;align-items:center;justify-content:center;height:100vh;background:#f3f3f3}
+    form{background:#fff;padding:20px;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+    input{padding:10px;margin:8px 0;width:100%}
+    button{padding:10px;width:100%;background:#075e54;color:#fff;border:none;border-radius:6px}
+    a {display:block;text-align:center;margin-top:10px}
+  </style>
+</head>
+<body>
+  <form method="POST" action="{{ url_for('login') }}">
+    <h3>Login</h3>
+    <input name="username" placeholder="Username" required>
+    <input name="password" type="password" placeholder="Password" required>
+    <button type="submit">Login</button>
+    <a href="{{ url_for('register') }}">Register</a>
+  </form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Profile</title>
+<style>
+  body{font-family:Arial;display:flex;align-items:center;justify-content:center;height:100vh;background:#f5f6f7}
+  form{background:#fff;padding:20px;border-radius:8px}
+  input{display:block;margin:8px 0;padding:8px;width:300px}
+  button{padding:8px 12px;background:#075e54;color:#fff;border:none;border-radius:6px}
+</style>
+</head>
+<body>
+  <form method="POST" enctype="multipart/form-data">
+    <h3>Profile</h3>
+    <label>Username</label>
+    <input name="username" value="{{ user.username }}" required>
+    <label>New password (leave blank to keep)</label>
+    <input name="password" type="password" placeholder="New password">
+    <label>Profile picture (optional)</label>
+    <input name="profile_pic" type="file" accept="image/*">
+    {% if user.profile_pic %}
+      <div><img src="{{ user.profile_pic }}" alt="pic" width="100"></div>
+    {% endif %}
+    <button type="submit">Update</button>
+  </form>
+</body>
+</html>

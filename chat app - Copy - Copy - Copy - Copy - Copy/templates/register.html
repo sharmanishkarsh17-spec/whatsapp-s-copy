@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Register</title>
+  <style>
+    body{font-family:Arial;display:flex;align-items:center;justify-content:center;height:100vh;background:#f3f3f3}
+    form{background:#fff;padding:20px;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+    input{padding:10px;margin:8px 0;width:100%}
+    button{padding:10px;width:100%;background:#075e54;color:#fff;border:none;border-radius:6px}
+    a {display:block;text-align:center;margin-top:10px}
+  </style>
+</head>
+<body>
+  <form method="POST" action="{{ url_for('register') }}" enctype="multipart/form-data">
+    <h3>Register</h3>
+    <input name="username" placeholder="Username" required>
+    <input name="password" type="password" placeholder="Password" required>
+    <label>Profile picture (optional)</label>
+    <input type="file" name="profile_pic" accept="image/*">
+    <button type="submit">Create account</button>
+    <a href="{{ url_for('login') }}">Back to login</a>
+  </form>
+</body>
+</html>
